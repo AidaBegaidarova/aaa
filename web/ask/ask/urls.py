@@ -1,11 +1,11 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 from django.contrib import admin
 admin.autodiscover()
 
 from qa import views
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'ask.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -19,4 +19,4 @@ urlpatterns = patterns('',
     url(r'^question/(?P<question_id>[0-9]+)/answer/$', views.answer_add, name='answer_add'),
     url(r'^new/.*$',views.test),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
